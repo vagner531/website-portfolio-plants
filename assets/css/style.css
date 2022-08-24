@@ -536,17 +536,175 @@ the website, in dark theme
 
 /*=============== QUESTIONS ===============*/
 
+.questions {
+    background-color: var(--first-color-lighten);
+}
+
+.questions_container {
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+.questions_group {
+    display: grid;
+    row-gap: 1.5rem;
+}
+
+.questions_item {
+    background-color: var(--container-color);
+    border-radius: .25rem;
+}
+
+.questions_item-title {
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+}
+
+.questions_icon {
+    font-size: 1.25rem;
+    color: var(--title-color);
+}
+
+.questions_description {
+    font-size: var(--small-font-size);
+    padding: 0 1.25rem 1.25rem 2.5rem;
+}
+
+.questions_header {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    padding: .75rem .5rem;
+    cursor: pointer;
+}
+
+.questions_content {
+    overflow: hidden;
+    height: 0;
+}
+
+.questions_item,
+.questions_header,
+.questions_item-title,
+.questions_icon,
+.questions_description,
+.questions_content {
+    transition: .3s;
+}
+
+.questions_item:hover {
+    box-shadow: 0 2px 8px hsla(var(--hue), 4%, 15%, .1);
+}
+
 
 /*Rotate icon, change color of titles and background*/
+
+.accordion-open .questions_header,
+.accordion-open .questions_content {
+    background-color: var(--first-color);
+}
+
+.accordion-open .questions_item-title,
+.accordion-open .questions_description,
+.accordion-open .questions_icon {
+    color: #fff;
+}
+
+.accordion-open .questions_icon {
+    transform: rotate(45deg);
+}
 
 
 /*=============== CONTACT ===============*/
 
+.contact_container {
+    row-gap: 3.5rem;
+}
+
+.contact_data {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.contact_subtitle {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--text-color);
+    margin-bottom: var(--mb-0-5);
+}
+
+.contact_description {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+.contact_icon {
+    font-size: 1.5rem;
+}
+
+.contact_inputs {
+    display: grid;
+    row-gap: 2rem;
+    margin-bottom: var(--mb-2-5);
+}
+
+.contact_content {
+    position: relative;
+    height: 3rem;
+    border-bottom: 1px solid var(--text-color-light);
+}
+
+.contact_input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem 1rem 0;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 1;
+}
+
+.contact_label {
+    position: absolute;
+    top: .75rem;
+    width: 100%;
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    transition: .3s;
+}
+
+.contact_area {
+    height: 7rem;
+}
+
+.contact_area textarea {
+    resize: none;
+}
+
 
 /*Input focus move up label*/
 
+.contact_input:focus+.contact_label {
+    top: -.75rem;
+    left: 0;
+    font-size: var(--small-font-size);
+    z-index: 10;
+}
+
 
 /*Input focus sticky top label*/
+
+.contact_input:not(:placeholder-shown).contact_input:not(:focus)+.contact_label {
+    top: -.75rem;
+    font-size: var(--small-font-size);
+    z-index: 10;
+}
 
 
 /*=============== FOOTER ===============*/
